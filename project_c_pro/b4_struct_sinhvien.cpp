@@ -43,6 +43,7 @@ void nhap(sinhvien sv[], int n)
 	}
 
 }
+
 /*xuat n sinh vien*/
 void xuat(sinhvien sv[], int n)
 {
@@ -56,6 +57,7 @@ void xuat(sinhvien sv[], int n)
 	}
 
 }
+
 /*in ten sinh vien co diem tb >8.5*/
 void diemtb(sinhvien sv[], int n)
 {
@@ -69,6 +71,7 @@ void diemtb(sinhvien sv[], int n)
 		}
 	}
 }
+
 /*dem so sinh vien co ten han*/
 void timkiem(sinhvien sv[], int n)
 {
