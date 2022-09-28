@@ -74,6 +74,8 @@ void xuat1(sach cuonsach[], int i)
         printf("so luong: %d\t\tgia tien: %d\n", cuonsach[i].soluong, cuonsach[i].giatien);
 }
 
+
+/*  ERROR, YOU NEED FIX BUG AGAIN*/
 /*tim loai sach co so luong nhieu nhat*/
 void demSachmax(sach cuonsach[], int n)
 {
@@ -91,6 +93,43 @@ void demSachmax(sach cuonsach[], int n)
     printf("\n--------in thong tin sach so luong lon nhat----------\n");
     xuat1(cuonsach, count);
 }
+
+/*  ERROR, YOU NEED FIX BUG AGAIN*/
+/*tim loai sach co so luong nhieu nhat*/
+void demSachmaxfix(sach cuonsach[], int n)
+{
+    int i, j, x = 0;
+    int tongsach[n];
+    int id[n][n];
+
+    for(i = 0; i < n - 1; i++)
+    {
+        tongsach[i] = cuonsach[i].soluong;
+
+        for(j = i+1; j < n; j++)
+        {
+            /*so sanh cuoi sach thu i xem co giong the loai sau khong. neu giong thi lam*/
+            if(strcmp(cuonsach[i].theloai, cuonsach[j].theloai) == 0)
+            {
+                /*tinh tong so luong cuon sach thuoc cung loai sach voi loai sach dau tien*/
+                tongsach[i] = tongsach[i] + cuonsach[j].soluong;
+                /*luu vi tri cac cuon sach trung the loai*/
+                id[i][x] = j;
+                x++;
+            }
+        }
+
+        x = 0;
+        if(i == id[i][x])
+        {
+
+        }
+     
+    }
+}
+
+
+
 
 /*in thong tin sach lap trinh nang cao*/
 void sachnangcao(sach cuonsach[], int n)
@@ -115,22 +154,14 @@ void sachnangcao(sach cuonsach[], int n)
         if(strcmp(chuoitemp1,sachtemp) == 0 && strcmp(chuoitemp2,tacgiatemp) == 0)
         {
             vitri++;
-            // printf("====%d\n", vitri);
+            printf("\nthong tin sach: lap trinh c nang cao tac gia: Pham Van At: \n");
+            xuat1(cuonsach,(i));
         }
-        
-        // printf("\n\n%s\n", chuoitemp1);
-        // printf("\n%s\n", tacgiatemp);
-        // printf("%d\n", vitri);
-
     }
     if(vitri == 0)
     {
         printf("khong co cuon sach: Lap trinh c nang cao tac gia: Pham Van At\n");
-    }else{
-        printf("\nthong tin sach: lap trinh c nang cao tac gia: Pham Van At: \n");
-        xuat1(cuonsach,(vitri));
     }
-    
 }
 
 /*sap xep danh sach theo ten sach*/
@@ -194,7 +225,7 @@ void xoasach(sach cuonsach[], int *n)
         { 
                 /*neu vi tri xoa la o dau hoac giua*/
                 cuonsach[i] = cuonsach[i+1]; 
-
+                    *n = *n - 1;
                 /*neu o cuoi danh sach*/
                 if(i == (*n-1))
                 {
@@ -227,7 +258,6 @@ int main()
     sapxep(cuonsach, n);
     printf("\n-------in thong tin sach da sap xep-------------\n");
     xuat(cuonsach,n);
-
     /*xoa thong tin sach co ma nhap vao tu ban phim*/
     xoasach(cuonsach, &n);
     xuat(cuonsach,n);
