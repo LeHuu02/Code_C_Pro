@@ -1,0 +1,5 @@
+tong = 57
+xin chao cac ban
+mang sau khi sap xep tang:  1	 2	 3	 4	 9	 16	 22	
+gia tri min: 1 
+cac so chinh phuong trong mang la:  4 	 9 	 16 	 1 	
