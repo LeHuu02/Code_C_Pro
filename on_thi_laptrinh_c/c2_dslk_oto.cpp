@@ -122,19 +122,37 @@ void xoa2(list &l){
     NODE *k = l.phead;
     k->next = k->next->next;
 }
+void timkiem(list l){
+    //nhap ten xe in ra thong tin
+    char nhap[100]; //tao chuoi nhap ten xe can tim
+    printf("\nnhap ten xe can tim: ");
+    fflush(stdin);  //xoa bo nho dem
+    gets(nhap);
+    int n;  //dem xe chuoi vua nhap la bao nhieu ky tu luu vao bien n
+    n = strlen(nhap);
+    char temp[n];
+    for(NODE *p = l.phead; p != NULL; p = p->next){
+        if(strcmp(p->data.ten, strcpy(temp,nhap)) == 0){
+            printf("\nthong tin xe can tim: ");
+            printf("\nten: %s\thang: %s\tphien ban: %s", p->data.ten, p->data.hangxe, p->data.phienban);
+            printf("\nnoi sx: %s\tgia ban: %d", p->data.noisx, p->data.giaban);
+        }
+    }
+}
 int main(){
     list l;
     khoitao(l);
     nhapds(l);
     xuat(l);
-    demxe(l);
+    // demxe(l);
     // xoadau(l);
     // printf("\nds da xoa dau: ");
     // xuat(l);
     // printf("\nds da xoa thu 2: ");
     // xoa2(l);
-    printf("\nds da xoa xe gia > 20000: ");
-    xoaxe(l);
-    xuat(l);
+    // printf("\nds da xoa xe gia > 20000: ");
+    // xoaxe(l);
+    timkiem(l);    
+    // xuat(l);
     return 0;
 }
