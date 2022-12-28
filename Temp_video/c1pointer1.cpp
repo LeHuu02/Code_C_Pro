@@ -68,7 +68,6 @@ int main(){
     //     printf("%d\t", *(arr+i));
     // }
     // tang(arr, n);
-    
     //tim min
     int min = *(arr+0);
     for(i = 1; i < n; i++){
